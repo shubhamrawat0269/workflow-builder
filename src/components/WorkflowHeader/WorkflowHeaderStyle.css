@@ -1,0 +1,21 @@
+.workflow__header__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem;
+    background-color: #1b1b42;
+}
+
+.workflow__header__section h6 {
+    color: #FFF;
+}
+
+.btns {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btns button {
+    padding: 0.25rem 1rem;
+}

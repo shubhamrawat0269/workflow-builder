@@ -1,0 +1,43 @@
+.worflow__list__section {
+    background-color: #eaebed;
+    /* color: #FFF; */
+}
+
+.workflow__list__cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 95%;
+    margin: 1rem auto;
+}
+
+.workflow__list__card {
+    padding: 0.65rem;
+    border: 1px solid;
+    cursor: pointer;
+    width: 20rem;
+    height: 8rem;
+    transition: all 0.3s linear;
+}
+
+.workflow__list__card:hover {
+    background-color: #8585d7;
+    color: #FFF;
+}
+
+.user__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 1rem;
+}
+
+.user__details button {
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #8585d7;
+    color: #FFFFFF;
+}
