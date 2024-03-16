@@ -1,14 +1,15 @@
 import React from "react";
+import Logo from "./components/Logo";
+import Menu from "./components/Menu";
+import UserLoginBtns from "./components/UserLoginBtns";
 
 const Header = () => {
   return (
-    <div>
-      <div>
-        <img className="logo" src="images/flow.png" alt="logo" />
-      </div>
-      <div className="btns">
-        <button>Sign In</button>
-        <button>Try for free</button>
+    <div className="primary-bg">
+      <div className="flex justify-between items-center container">
+        <Logo />
+        <Menu />
+        <UserLoginBtns />
       </div>
     </div>
   );

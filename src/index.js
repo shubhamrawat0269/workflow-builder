@@ -1,4 +1,4 @@
-// import "./_global.css";
+import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <h2>Error 404 - Page Not Found</h2>,
+    element: <h2 className="text-2xl">Error 404 - Page Not Found</h2>,
   },
 ]);
 
