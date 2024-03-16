@@ -1,5 +1,4 @@
 import React from "react";
-import "./WorkflowHeaderStyle.css";
 import { WorkFlowLogo } from "../../assets/logo";
 
 const WorkFlowHeader = ({ title }) => {

@@ -1,6 +1,5 @@
 import React from "react";
 import { WorkFlowLogo } from "../../assets/logo";
-import "./NavbarStyle.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {

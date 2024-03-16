@@ -1,6 +1,4 @@
 import React from "react";
-import "./WorkFlowListStyle.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { WORKFLOW_LIST_DATA } from "../../utils/API_ENDPOINT";
