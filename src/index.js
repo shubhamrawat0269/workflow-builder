@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 import WorkFlowPage from "./pages/WorkFlowPage";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 
-import { Auth0Provider } from "@auth0/auth0-react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -29,13 +28,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Auth0Provider
-    domain="dev-383elx6sz8425dpl.us.auth0.com"
-    clientId="p9Y3doLOjGE5oUN6kCgxAwPwhzWpwgj7"
-    authorizationParams={{
-      redirect_uri: window.location.origin,
-    }}
-  >
+  <React.StrictMode>
     <RouterProvider router={router} />
-  </Auth0Provider>
+  </React.StrictMode>
 );
