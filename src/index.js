@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 
 import Home from "./pages/Home";
 import WorkFlowPage from "./pages/WorkFlowPage";
+import SignUpForm from "./components/SignUpForm/SignUpForm";
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/signup",
+    element: <SignUpForm />,
   },
   {
     path: "/workflow",

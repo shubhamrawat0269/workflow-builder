@@ -6,7 +6,7 @@ import UserLoginBtns from "./components/UserLoginBtns";
 const Header = () => {
   return (
     <div className="primary-bg">
-      <div className="flex justify-between items-center container">
+      <div className="flex justify-between items-center container ">
         <Logo />
         <Menu />
         <UserLoginBtns />

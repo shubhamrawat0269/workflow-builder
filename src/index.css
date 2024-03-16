@@ -15,6 +15,10 @@ html {
     font-family: "Poppins", sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 
 :root {
     --primary-bg: #151515;
@@ -71,8 +75,9 @@ h2 {
 }
 
 h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--text-primary-clr);
 }
 
 p {
@@ -123,7 +128,8 @@ p {
     transition: all .3s ease;
 }
 
-.start-free-btn {
+.start-free-btn,
+.signup-btn {
     background-color: var(--btn-clr);
     padding: 1.5rem 2rem;
     display: inline-block;
