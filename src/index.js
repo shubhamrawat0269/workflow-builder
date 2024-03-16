@@ -1,9 +1,10 @@
+import "./_global.css";
 import React from "react";
-import "./css/button.css";
-import "./css/extra.css";
-import Home from "./pages/Home";
 import ReactDOM from "react-dom/client";
+
+import Home from "./pages/Home";
 import WorkFlowPage from "./pages/WorkFlowPage";
+
 import { Auth0Provider } from "@auth0/auth0-react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import WorkFlowList from "../components/WorkFlowList/WorkFlowList";
+import { Features, Header, HeroSection } from "../components/composer";
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-      <WorkFlowList />
-    </>
+    <div>
+      <Header />
+      <HeroSection />
+      <Features />
+    </div>
   );
 };
 

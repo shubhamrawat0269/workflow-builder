@@ -11,7 +11,6 @@ import ReactFlow, {
   MiniMap,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import "../css/button.css";
 import { useFetch } from "../hooks/useFetch";
 
 function Sidebar(props) {
