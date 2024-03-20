@@ -1,16 +1,23 @@
 import React from "react";
 import { app } from "../../Firebase";
+import { v4 as uuidv4 } from "uuid";
 import { getDatabase, ref, set } from "firebase/database";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
-  const signInData = (id, name, phone, address) => {
-    // console.log({ id, name, phone, address });
+  const navigate = useNavigate();
+  // How to send data in backend Firebase
+  const signInData = (name, phone, address) => {
     const db = getDatabase(app);
-    set(ref(db, "user/" + id), {
+    set(ref(db, "user/" + uuidv4()), {
       username: name,
       phone: phone,
       address: address,
-    });
+    })
+      .then(() => {
+        navigate("/dashboard");
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className="primary-bg w-screen h-screen flex justify-center items-center ">
@@ -27,9 +34,7 @@ const SignUpForm = () => {
         <div className="flex flex-col gap-10">
           <button
             className="signup-btn mt-7 w-3/5 m-auto"
-            onClick={() =>
-              signInData("2", "Aditi", "8375099660", "Shyam Vihar")
-            }
+            onClick={() => signInData("Shubham", "9711071504", "Shyam Vihar")}
           >
             Sign in with Github
           </button>

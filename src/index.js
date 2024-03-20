@@ -7,6 +7,7 @@ import WorkFlowPage from "./pages/WorkFlowPage";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import UserDashboard from "./components/UserDashboard/UserDashboard";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUpForm />,
+  },
+  {
+    path: "/dashboard",
+    element: <UserDashboard />,
   },
   {
     path: "/workflow",
