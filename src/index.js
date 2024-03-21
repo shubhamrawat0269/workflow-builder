@@ -8,6 +8,8 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
+import RegistrationFrm from "./components/RegistrationFrm/RegistrationFrm";
+import { UserProvider } from "./contexts/userContext";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
     element: <WorkFlowPage />,
   },
   {
+    path: "/register",
+    element: <RegistrationFrm />,
+  },
+  {
     path: "*",
     element: <h2 className="text-2xl">Error 404 - Page Not Found</h2>,
   },
@@ -34,6 +40,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   </React.StrictMode>
 );
