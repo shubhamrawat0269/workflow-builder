@@ -11,6 +11,9 @@ import UserDashboard from "./components/UserDashboard/UserDashboard";
 import RegistrationFrm from "./components/RegistrationFrm/RegistrationFrm";
 import { UserProvider } from "./contexts/userContext";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +45,18 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UserProvider>
       <RouterProvider router={router} />
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </UserProvider>
   </React.StrictMode>
 );

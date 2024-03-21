@@ -9,6 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase";
+import { toast } from "react-toastify";
 
 const UserContext = createContext();
 
@@ -40,7 +41,10 @@ const UserProvider = ({ children }) => {
       .then((res) => {
         console.log(res);
       })
-      .catch((err) => setError(err.message))
+      .catch((err) => {
+        console.log(err.message);
+        setError(<h4>Invalid User Credentials</h4>);
+      })
       .finally(() => setLoading(false));
   };
 
@@ -51,10 +55,16 @@ const UserProvider = ({ children }) => {
         console.log(res);
         setUser(res.user);
       })
-      .catch((err) => setError(err.message))
+      .catch((err) => {
+        console.log(err.message);
+        toast.error("Invalid User Credentials");
+      })
       .finally(() => setLoading(false));
   };
-  const logoutUser = () => signOut(auth);
+  const logoutUser = () => {
+    signOut(auth);
+    setUser(null);
+  };
 
   const forgotPassword = (email) => sendPasswordResetEmail(auth, email);
 
