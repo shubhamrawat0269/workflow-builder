@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../../hooks/useUserContext";
 
 const RegistrationFrm = () => {
-  const { registerUser } = useUserContext();
+  const { registerUser, loading } = useUserContext();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -29,14 +29,8 @@ const RegistrationFrm = () => {
         <p className="text-white text-3xl">
           Register to start building your projects today.
         </p>
-        <form onSubmit={onSubmit} className="flex flex-col gap-10">
-          {/* <button
-            className="signup-btn mt-7 w-3/5 m-auto"
-            onClick={() => signInData("Shubham", "9711071504", "Shyam Vihar")}
-          >
-            Sign in with Github
-          </button> */}
-          <label htmlFor="email">
+        <form onSubmit={onSubmit} className="flex flex-col gap-10 form-ctrl">
+          <label htmlFor="email" className="mt-5">
             <input
               type="text"
               id="email"
@@ -63,7 +57,9 @@ const RegistrationFrm = () => {
               autoComplete="off"
             />
           </label>
-          <button type="submit" className="signup-btn mt-7 w-3/5 m-auto">Register</button>
+          <button type="submit" className="signup-btn w-2/5 m-auto">
+            {loading ? "Loading...." : "Register"}
+          </button>
           <Link to="/signup" className="btn">
             Already have an account?
           </Link>

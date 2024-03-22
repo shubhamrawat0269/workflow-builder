@@ -39,11 +39,12 @@ const UserProvider = ({ children }) => {
         });
       })
       .then((res) => {
-        console.log(res);
+        toast.success("User Register Successfully");
       })
       .catch((err) => {
-        console.log(err.message);
-        setError(<h4>Invalid User Credentials</h4>);
+        console.log(err);
+        setError(err.message);
+        toast.error(err.message);
       })
       .finally(() => setLoading(false));
   };
@@ -52,8 +53,9 @@ const UserProvider = ({ children }) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setUser(res.user);
+        toast.success("User Login Successfully");
       })
       .catch((err) => {
         console.log(err.message);
