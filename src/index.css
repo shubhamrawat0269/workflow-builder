@@ -93,9 +93,8 @@ p {
     padding: 9rem 0;
 }
 
-.grid {
-    display: grid;
-    gap: 9rem;
+.grid-span-col {
+    grid-template-columns: 20vw 80vw;
 }
 
 .grid-two-column {
@@ -113,6 +112,10 @@ p {
 .container {
     max-width: 120rem;
     margin: 0 auto;
+}
+
+.workspace-section {
+    height: 92.75vh;
 }
 
 .spcl-btn {
@@ -152,6 +155,37 @@ p {
     cursor: pointer;
     font-size: 1.5rem;
     transition: all .3s ease;
+}
+
+.create-btn {
+    background-color: var(--btn-clr);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .3s ease;
+}
+
+.logout-btn {
+    background-color: var(--text-primary-clr);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .3s ease;
+}
+
+.create-btn::before {
+    content: "+";
+    margin-right: 0.5rem;
 }
 
 .learn-more-btn {
