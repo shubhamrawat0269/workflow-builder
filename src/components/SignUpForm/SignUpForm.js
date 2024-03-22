@@ -8,7 +8,14 @@ const SignUpForm = () => {
   const navigate = useNavigate();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const { user, loading, signInUser, forgotPassword } = useUserContext();
+  const {
+    user,
+    loading,
+    signInUser,
+    forgotPassword,
+    signInWithGoogle,
+    signInWithGithub,
+  } = useUserContext();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +48,7 @@ const SignUpForm = () => {
   return (
     <div className="primary-bg w-screen h-screen flex justify-center items-center">
       <div className="signup-container text-center">
-        <figure className=" flex justify-center items-center">
+        <figure className="flex justify-center items-center">
           <img className="w-40" src="images/flow.png" alt="flow" />
         </figure>
         <h3 className="leading-11">
@@ -74,6 +81,22 @@ const SignUpForm = () => {
           <button type="submit" className="signup-btn w-2/5 m-auto">
             {loading ? "Loading...." : "Sign in"}
           </button>
+          <div className="flex justify-center items-center gap-5">
+            <button
+              type="submit"
+              className="signup-btn w-3/5 m-auto"
+              onClick={signInWithGoogle}
+            >
+              Sign in with Google
+            </button>
+            <button
+              type="submit"
+              className="signup-btn w-3/5 m-auto"
+              onClick={signInWithGithub}
+            >
+              Sign in with Github
+            </button>
+          </div>
           <div className="flex justify-center items-center gap-10">
             <a onClick={forgotPasswordHandler} className="btn">
               Forgot Password

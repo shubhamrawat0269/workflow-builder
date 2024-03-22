@@ -7,6 +7,9 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
 } from "firebase/auth";
 import { auth } from "../Firebase";
 import { toast } from "react-toastify";
@@ -70,6 +73,30 @@ const UserProvider = ({ children }) => {
 
   const forgotPassword = (email) => sendPasswordResetEmail(auth, email);
 
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, new GoogleAuthProvider())
+      .then((res) => {
+        toast.success("User SignIn Successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err.message);
+        toast.error(err.message);
+      });
+  };
+
+  const signInWithGithub = () => {
+    signInWithPopup(auth, new GithubAuthProvider())
+      .then((res) => {
+        toast.success("User SignIn Successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err.message);
+        toast.error(err.message);
+      });
+  };
+
   const context = {
     user,
     loading,
@@ -78,6 +105,8 @@ const UserProvider = ({ children }) => {
     signInUser,
     logoutUser,
     forgotPassword,
+    signInWithGoogle,
+    signInWithGithub,
   };
 
   return (
